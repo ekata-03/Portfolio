@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #3498db;
@@ -94,6 +95,7 @@
             align-items: center;
             min-height: 80vh;
             padding: 80px 0 40px;
+            position: relative;
         }
 
         .hero-content {
@@ -165,11 +167,6 @@
         .btn-outline:hover {
             background-color: var(--primary);
             color: white;
-        }
-
-        .btn-small {
-            padding: 8px 16px;
-            font-size: 0.9rem;
         }
 
         .hero-image {
@@ -304,7 +301,7 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
         }
@@ -454,12 +451,77 @@
             transform: translateY(-3px);
         }
 
+        /* Methodology and Results Section Styling */
+        .methodology-step,
+        .results-step {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .methodology-step h3,
+        .results-step h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .methodology-step p,
+        .results-step p {
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .methodology-step ul,
+        .results-step ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .methodology-step li,
+        .results-step li {
+            margin-bottom: 8px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
         /* Contact Section */
         .contact-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 2rem;
+        }
+
+        .contact-header {
             text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .contact-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .contact-info,
+        .contact-form-container {
+            flex: 1;
         }
 
         .contact-info {
@@ -467,23 +529,103 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-top: 30px;
         }
 
-        .contact-item {
+        .contact-info h3 {
+            color: var(--secondary);
             margin-bottom: 20px;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
         }
 
-        .contact-item a {
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-info-item i {
+            font-size: 1.5rem;
             color: var(--primary);
+            margin-right: 15px;
+        }
+
+        .contact-info-item p,
+        .contact-info-item a {
+            color: var(--text);
+            line-height: 1.6;
             text-decoration: none;
+        }
+
+        .contact-info-item a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .contact-form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-header {
+            margin-bottom: 20px;
+        }
+
+        .form-header h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
 
-        .contact-item a:hover {
-            color: var(--secondary);
-            text-decoration: underline;
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
         }
 
         /* Footer */
@@ -580,6 +722,10 @@
             .content-subtitle {
                 font-size: 1.5rem;
             }
+
+            .contact-content {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 480px) {
@@ -616,6 +762,14 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-arrows {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -650,7 +804,7 @@
             </div>
             <div class="hero-image">
                 <img src="photo.png" alt="Ekata Adhikari" />
-            </div>
+       
         </section>
 
         <section id="skills" class="skills-section">
@@ -713,13 +867,7 @@
                     analysis techniques. While I have not yet delved into Natural Language Processing (NLP) or Large
                     Language Models (LLMs), I am keenly interested in these domains and am committed to expanding my
                     expertise in them over time.
-                </p>
-
-                <p class="content-text">
-                    I am currently seeking a machine learning internship to contribute to impactful projects and further
-                    hone my skills in deep learning, generative AI, and related areas. My long-term aspiration is to
-                    evolve into a proficient AI engineer, dedicated to advancing the field of artificial intelligence.
-                </p>
+                </p>        
             </div>
         </section>
 
@@ -822,7 +970,9 @@
             <div class="project-content">
                 <div class="project-section">
                     <h2 class="section-title">Project Overview</h2>
-                    <img src="high.png" alt="SRGAN Project" class="project-img">
+                    <div style="text-align: center;">
+                        <img src="high.png" style="width: 700px; max-width: 100%; height: auto;" alt="SRGAN Project" class="project-img">
+                    </div>
                     <p>This project focuses on enhancing image resolution using Super-Resolution Generative Adversarial
                         Networks (SRGAN), a deep learning-based approach. The SRGAN framework includes two primary
                         components: a generator and a discriminator. The generator is designed to transform
@@ -854,65 +1004,79 @@
 
                 <div class="project-section">
                     <h2 class="section-title">Methodology</h2>
-                    <img src="image_meth.png" alt="Methodology Block Diagram" class="project-img">
+                    <div style="text-align: center;">
+                        <img src="image_meth.png" style="width: 700px; max-width: 100%; height: auto;" alt="Methodology Block Diagram" class="project-img">
+                    </div>
+                    
+                    <div class="methodology-step">
+                        <h3>1. Dataset Preparation</h3>
+                        <p>The Mirflickr dataset was used, consisting of 25,000 high-resolution images and their
+                            corresponding low-resolution versions. The high-resolution images served as ground truth, while
+                            the low-resolution images (generated by downscaling) acted as input for the SRGAN model.</p>
+                    </div>
 
-                    <h3 class="content-subtitle">1. Dataset Preparation</h3>
-                    <p>The Mirflickr dataset was used, consisting of 25,000 high-resolution images and their
-                        corresponding low-resolution versions. The high-resolution images served as ground truth, while
-                        the low-resolution images (generated by downscaling) acted as input for the SRGAN model.</p>
+                    <div class="methodology-step">
+                        <h3>2. Data Processing</h3>
+                        <ul>
+                            <li>Images were loaded and converted to RGB format</li>
+                            <li>Pixel values were normalized to [0, 1] range</li>
+                            <li>Data was split into training (67%) and testing (33%) sets</li>
+                            <li>Images were batched (size 32) for efficient training</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="content-subtitle">2. Data Processing</h3>
-                    <ul class="content-list">
-                        <li>Images were loaded and converted to RGB format</li>
-                        <li>Pixel values were normalized to [0, 1] range</li>
-                        <li>Data was split into training (67%) and testing (33%) sets</li>
-                        <li>Images were batched (size 32) for efficient training</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>3. SRGAN Architecture</h3>
+                        <div style="text-align: center;">
+                            <img src="srgan_archi.png" style="width: 700px; max-width: 100%; height: auto;" alt="SRGAN Architecture" class="project-img">
+                        </div>
+                        
+                        <h4>Generator Architecture:</h4>
+                        <ul>
+                            <li><strong>Feature Extraction:</strong> 9x9 convolutional layer with 64 filters + PReLU
+                                activation</li>
+                            <li><strong>Residual Blocks:</strong> 16 blocks with 3x3 convolutions, batch normalization, and
+                                skip connections</li>
+                            <li><strong>Upsampling Blocks:</strong> Two blocks with 3x3 convolutions and 2x upsampling</li>
+                            <li><strong>Output Layer:</strong> 9x9 convolution producing the high-resolution image</li>
+                        </ul>
 
-                    <h3 class="content-subtitle">3. SRGAN Architecture</h3>
-                    <img src="srgan_archi.png" alt="SRGAN Architecture" class="project-img">
+                        <h4>Discriminator Architecture:</h4>
+                        <ul>
+                            <li>Series of convolutional blocks with increasing filters (64 → 512)</li>
+                            <li>Batch normalization and LeakyReLU activation</li>
+                            <li>Fully connected layer with sigmoid output (real/fake classification)</li>
+                        </ul>
+                    </div>
 
-                    <h4>Generator Architecture:</h4>
-                    <ul class="content-list">
-                        <li><strong>Feature Extraction:</strong> 9x9 convolutional layer with 64 filters + PReLU
-                            activation</li>
-                        <li><strong>Residual Blocks:</strong> 16 blocks with 3x3 convolutions, batch normalization, and
-                            skip connections</li>
-                        <li><strong>Upsampling Blocks:</strong> Two blocks with 3x3 convolutions and 2x upsampling</li>
-                        <li><strong>Output Layer:</strong> 9x9 convolution producing the high-resolution image</li>
-                    </ul>
-
-                    <h4>Discriminator Architecture:</h4>
-                    <ul class="content-list">
-                        <li>Series of convolutional blocks with increasing filters (64 → 512)</li>
-                        <li>Batch normalization and LeakyReLU activation</li>
-                        <li>Fully connected layer with sigmoid output (real/fake classification)</li>
-                    </ul>
-
-                    <h3 class="content-subtitle">4. Training Process</h3>
-                    <ul class="content-list">
-                        <li>Trained for 100 epochs with batch size of 32</li>
-                        <li>Used combined adversarial loss and content loss</li>
-                        <li>Optimizer: Adam with learning rate 0.0002</li>
-                        <li>Implemented early stopping based on validation loss</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>4. Training Process</h3>
+                        <ul>
+                            <li>Trained for 100 epochs with batch size of 32</li>
+                            <li>Used combined adversarial loss and content loss</li>
+                            <li>Optimizer: Adam with learning rate 0.0002</li>
+                            <li>Implemented early stopping based on validation loss</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="project-section">
                     <h2 class="section-title">Results</h2>
-                    <img src="result_srgan.png" alt="SRGAN Results" class="project-img">
-
-                    <p>The model showed significant improvements in producing sharper and more detailed images compared
-                        to traditional upscaling methods. Key results include:</p>
-                    <ul class="content-list">
-                        <li>Successfully transformed 32x32 low-resolution inputs to 128x128 high-resolution outputs</li>
-                        <li>Generated images retained structural details and textures from original high-resolution
-                            images</li>
-                        <li>Perceptual quality was significantly better than interpolation-based methods</li>
-                    </ul>
-
-                    <p>This approach demonstrates potential for applications in medical imaging, satellite image
-                        analysis, and media where high-quality visuals are essential.</p>
+                    <div class="results-step">
+                        <div style="text-align: center;">
+                            <img src="result_srgan.png" style="width: 800px; max-width: 100%; height: auto;" alt="SRGAN Results" class="project-img">
+                        </div>
+                        <p>The model showed significant improvements in producing sharper and more detailed images compared
+                            to traditional upscaling methods. Key results include:</p>
+                        <ul class="content-list">
+                            <li>Successfully transformed 32x32 low-resolution inputs to 128x128 high-resolution outputs</li>
+                            <li>Generated images retained structural details and textures from original high-resolution
+                                images</li>
+                            <li>Perceptual quality was significantly better than interpolation-based methods</li>
+                        </ul>
+                        <p>This approach demonstrates potential for applications in medical imaging, satellite image
+                            analysis, and media where high-quality visuals are essential.</p>
+                    </div>
 
                     <a href="https://github.com/ekata-03/Projects/blob/main/SRGAN.ipynb" target="_blank"
                         class="btn">View on GitHub</a>
@@ -931,7 +1095,9 @@
             <div class="project-content">
                 <div class="project-section">
                     <h2 class="section-title">Project Overview</h2>
-                    <img src="cnn.png" alt="CNN Speaker Identification" class="project-img">
+                    <div style="text-align: center;">
+                        <img src="cnn.png" style="width: 700px; max-width: 100%; height: auto;" alt="CNN Speaker Identification" class="project-img">
+                    </div>
                     <p>This project investigates the application of deep learning models in speaker identification,
                         specifically using Convolutional Neural Networks (CNNs). The system was designed to identify
                         speakers from voice recordings with high accuracy by analyzing unique vocal characteristics.</p>
@@ -957,75 +1123,85 @@
 
                 <div class="project-section">
                     <h2 class="section-title">Methodology</h2>
-                    <img src="cnn_meth.png" alt="Methodology Block Diagram" class="project-img">
+                    <div style="text-align: center;">
+                        <img src="cnn_meth.png" style="width: 780px; max-width: 100%; height: auto;" alt="Methodology Block Diagram" class="project-img">
+                    </div>
+                    <div class="methodology-step">
+                        <h3>1. Dataset Preparation</h3>
+                        <ul>
+                            <li>Collected audio recordings from 4 speakers (2 male, 2 female)</li>
+                            <li>Recorded 15-minute audio per speaker and split into 1-second .wav files</li>
+                            <li>Augmented dataset to 1500 samples per speaker using random segmentation</li>
+                            <li>Split data into training (70%), validation (15%), and testing (15%) sets</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="content-subtitle">1. Dataset Preparation</h3>
-                    <ul class="content-list">
-                        <li>Collected audio recordings from 4 speakers (2 male, 2 female)</li>
-                        <li>Recorded 15-minute audio per speaker and split into 1-second .wav files</li>
-                        <li>Augmented dataset to 1500 samples per speaker using random segmentation</li>
-                        <li>Split data into training (70%), validation (15%), and testing (15%) sets</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>2. Feature Extraction</h3>
+                        <ul>
+                            <li>Applied Butterworth low-pass filter (4000Hz cutoff) for noise reduction</li>
+                            <li>Extracted 8 MFCC coefficients per audio sample</li>
+                            <li>Standardized features to normalize values</li>
+                            <li>Fixed feature length to 50 time steps for consistency</li>
+                            <li>Additional features: pitch (fundamental frequency) and loudness (RMS energy)</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="content-subtitle">2. Feature Extraction</h3>
-                    <ul class="content-list">
-                        <li>Applied Butterworth low-pass filter (4000Hz cutoff) for noise reduction</li>
-                        <li>Extracted 8 MFCC coefficients per audio sample</li>
-                        <li>Standardized features to normalize values</li>
-                        <li>Fixed feature length to 50 time steps for consistency</li>
-                        <li>Additional features: pitch (fundamental frequency) and loudness (RMS energy)</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>3. CNN Architecture</h3>
+                        <div style="text-align: center;">
+                            <img src="cnn_archi.png" style="width: 780px; max-width: 100%; height: auto;" alt="CNN Architecture" class="project-img">
+                        </div>
+                        <ul>
+                            <li><strong>Input Layer:</strong> 98 time steps × 8 MFCC features</li>
+                            <li><strong>Convolutional Blocks:</strong>
+                                <ul>
+                                    <li>First block: 64 filters, kernel size 3, ReLU, batch norm, max pooling</li>
+                                    <li>Second block: 128 filters, kernel size 3, ReLU, batch norm, max pooling</li>
+                                </ul>
+                            </li>
+                            <li><strong>Fully Connected Layers:</strong>
+                                <ul>
+                                    <li>Flatten layer to convert to 1D</li>
+                                    <li>Dense layer (128 units) with ReLU and dropout (0.5)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Output Layer:</strong> Softmax activation for speaker classification</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="content-subtitle">3. CNN Architecture</h3>
-                    <img src="cnn_archi.png" alt="CNN Architecture" class="project-img">
-
-                    <ul class="content-list">
-                        <li><strong>Input Layer:</strong> 98 time steps × 8 MFCC features</li>
-                        <li><strong>Convolutional Blocks:</strong>
-                            <ul>
-                                <li>First block: 64 filters, kernel size 3, ReLU, batch norm, max pooling</li>
-                                <li>Second block: 128 filters, kernel size 3, ReLU, batch norm, max pooling</li>
-                            </ul>
-                        </li>
-                        <li><strong>Fully Connected Layers:</strong>
-                            <ul>
-                                <li>Flatten layer to convert to 1D</li>
-                                <li>Dense layer (128 units) with ReLU and dropout (0.5)</li>
-                            </ul>
-                        </li>
-                        <li><strong>Output Layer:</strong> Softmax activation for speaker classification</li>
-                    </ul>
-
-                    <h3 class="content-subtitle">4. Training Process</h3>
-                    <ul class="content-list">
-                        <li>Optimizer: SGD with learning rate 0.02 and momentum 0.9</li>
-                        <li>Loss function: Categorical crossentropy with label smoothing (0.3)</li>
-                        <li>Training: 10 epochs with batch size 32</li>
-                        <li>Implemented early stopping to prevent overfitting</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>4. Training Process</h3>
+                        <ul>
+                            <li>Optimizer: SGD with learning rate 0.02 and momentum 0.9</li>
+                            <li>Loss function: Categorical crossentropy with label smoothing (0.3)</li>
+                            <li>Training: 10 epochs with batch size 32</li>
+                            <li>Implemented early stopping to prevent overfitting</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="project-section">
                     <h2 class="section-title">Results</h2>
-                    <div class="project-images">
-                        <img src="result_cnn1.png" alt="CNN Results" class="project-img">
-                        <img src="result_cnn2.png" alt="Result 2" class="project-img">
+                    <div class="results-step">
+                        <div class="project-images">
+                            <img src="result_cnn1.png" alt="CNN Results" class="project-img">
+                            <img src="result_cnn2.png" alt="Result 2" class="project-img">
+                        </div>
+                        <p>The CNN model achieved 82.18% accuracy in speaker identification, outperforming the RNN-LSTM
+                            approach (76.42%). Key findings:</p>
+                        <ul class="content-list">
+                            <li>CNN's spatial feature extraction proved more effective for speaker identification than RNN's
+                                temporal approach</li>
+                            <li>Model showed robustness in distinguishing speakers but faced challenges with similar voice
+                                patterns</li>
+                            <li>Confusion matrix analysis revealed some misclassifications among speakers with similar pitch
+                                and tone</li>
+                        </ul>
+                        <p>The project demonstrated the importance of model architecture selection based on audio data
+                            characteristics, with CNNs being particularly effective for capturing spatial patterns in voice
+                            features.</p>
                     </div>
-
-                    <p>The CNN model achieved 82.18% accuracy in speaker identification, outperforming the RNN-LSTM
-                        approach (76.42%). Key findings:</p>
-                    <ul class="content-list">
-                        <li>CNN's spatial feature extraction proved more effective for speaker identification than RNN's
-                            temporal approach</li>
-                        <li>Model showed robustness in distinguishing speakers but faced challenges with similar voice
-                            patterns</li>
-                        <li>Confusion matrix analysis revealed some misclassifications among speakers with similar pitch
-                            and tone</li>
-                    </ul>
-
-                    <p>The project demonstrated the importance of model architecture selection based on audio data
-                        characteristics, with CNNs being particularly effective for capturing spatial patterns in voice
-                        features.</p>
 
                     <a href="https://github.com/ekata-03/Projects/blob/main/CNN_speaker_identification.ipynb"
                         target="_blank" class="btn">View on GitHub</a>
@@ -1045,7 +1221,9 @@
             <div class="project-content">
                 <div class="project-section">
                     <h2 class="section-title">Project Overview</h2>
-                    <img src="rnn.png" alt="RNN-LSTM Speaker Identification" class="project-img">
+                    <div style="text-align: center;">
+                        <img src="rnn.png" style="width: 780px; max-width: 100%; height: auto;" alt="RNN-LSTM Speaker Identification" class="project-img">
+                    </div>
                     <p>This project explores speaker identification using Recurrent Neural Networks with Long Short-Term
                         Memory (LSTM) layers, focusing on capturing temporal dependencies in voice patterns. The
                         RNN-LSTM model achieved 76.42% accuracy in identifying speakers from voice recordings.</p>
@@ -1071,71 +1249,83 @@
 
                 <div class="project-section">
                     <h2 class="section-title">Methodology</h2>
-                    <img src="rnn_meth.png" alt="Methodology Block Diagram" class="project-img">
+                    <div style="text-align: center;">
+                        <img src="rnn_meth.png" style="width: 780px; max-width: 100%; height: auto;" alt="Methodology Block Diagram" class="project-img">
+                    </div>
+                    <div class="methodology-step">
+                        <h3>1. Dataset Preparation</h3>
+                        <p>Same dataset as CNN project was used for fair comparison:</p>
+                        <ul>
+                            <li>Audio recordings from 4 speakers (2 male, 2 female)</li>
+                            <li>15-minute recordings split into 1-second segments</li>
+                            <li>Augmented to 1500 samples per speaker</li>
+                            <li>Train/validation/test split of 70%/15%/15%</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="content-subtitle">1. Dataset Preparation</h3>
-                    <p>Same dataset as CNN project was used for fair comparison:</p>
-                    <ul class="content-list">
-                        <li>Audio recordings from 4 speakers (2 male, 2 female)</li>
-                        <li>15-minute recordings split into 1-second segments</li>
-                        <li>Augmented to 1500 samples per speaker</li>
-                        <li>Train/validation/test split of 70%/15%/15%</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>2. Feature Engineering</h3>
+                        <ul>
+                            <li>Same preprocessing as CNN project (noise reduction, MFCC extraction)</li>
+                            <li>Calculated three similarity metrics:
+                                <ul>
+                                    <li><strong>MFCC Similarity:</strong> Cosine similarity between MFCC vectors</li>
+                                    <li><strong>Pitch Similarity:</strong> Normalized difference in fundamental frequency
+                                    </li>
+                                    <li><strong>Loudness Similarity:</strong> Normalized difference in RMS energy</li>
+                                </ul>
+                            </li>
+                            <li>Overall similarity score calculated as weighted average of these metrics</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="content-subtitle">2. Feature Engineering</h3>
-                    <ul class="content-list">
-                        <li>Same preprocessing as CNN project (noise reduction, MFCC extraction)</li>
-                        <li>Calculated three similarity metrics:
-                            <ul>
-                                <li><strong>MFCC Similarity:</strong> Cosine similarity between MFCC vectors</li>
-                                <li><strong>Pitch Similarity:</strong> Normalized difference in fundamental frequency
-                                </li>
-                                <li><strong>Loudness Similarity:</strong> Normalized difference in RMS energy</li>
-                            </ul>
-                        </li>
-                        <li>Overall similarity score calculated as weighted average of these metrics</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>3. RNN-LSTM Architecture</h3>
+                        <div style="text-align: center;">
+                            <img src="rnnwithlstm_ Architure.png" style="width: 600px; max-width: 100%; height: auto;" alt="RNN-LSTM Architecture" class="project-img">
+                        </div>
+                        <ul>
+                            <li><strong>Input Layer:</strong> 98 time steps × 8 MFCC features</li>
+                            <li><strong>SimpleRNN Layer:</strong> 128 units with return_sequences=True</li>
+                            <li><strong>LSTM Layer:</strong> 64 units to capture temporal dependencies</li>
+                            <li><strong>Dense Layer:</strong> 32 units with ReLU activation</li>
+                            <li><strong>Output Layer:</strong> Softmax activation for speaker classification</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="content-subtitle">3. RNN-LSTM Architecture</h3>
-                    <img src="rnnwithlstm_ Architure.png" alt="RNN-LSTM Architecture" class="project-img">
-
-                    <ul class="content-list">
-                        <li><strong>Input Layer:</strong> 98 time steps × 8 MFCC features</li>
-                        <li><strong>SimpleRNN Layer:</strong> 128 units with return_sequences=True</li>
-                        <li><strong>LSTM Layer:</strong> 64 units to capture temporal dependencies</li>
-                        <li><strong>Dense Layer:</strong> 32 units with ReLU activation</li>
-                        <li><strong>Output Layer:</strong> Softmax activation for speaker classification</li>
-                    </ul>
-
-                    <h3 class="content-subtitle">4. Training Process</h3>
-                    <ul class="content-list">
-                        <li>Optimizer: SGD with learning rate 0.02 and momentum 0.9</li>
-                        <li>Loss function: Categorical crossentropy with label smoothing (0.3)</li>
-                        <li>Training: 10 epochs with batch size 32</li>
-                        <li>Early stopping implemented to prevent overfitting</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>4. Training Process</h3>
+                        <ul>
+                            <li>Optimizer: SGD with learning rate 0.02 and momentum 0.9</li>
+                            <li>Loss function: Categorical crossentropy with label smoothing (0.3)</li>
+                            <li>Training: 10 epochs with batch size 32</li>
+                            <li>Early stopping implemented to prevent overfitting</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="project-section">
                     <h2 class="section-title">Results</h2>
-                    <div class="project-images">
-                        <img src="result_rnn1.png" alt="RNN-LSTM Results" class="project-img">
-                        <img src="result_rnn2.png" alt="Result 2" class="project-img">
+                    <div class="results-step">
+                        <div class="project-images">
+                            <img src="result_rnn1.png" style="width: 800px; max-width: 100%; height: auto;" alt="RNN-LSTM Results" class="project-img">
+                            <img src="result_rnn2.png" style="width: 780px; max-width: 100%; height: auto;" alt="Result 2" class="project-img">
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="result_rnn3.png" style="width: 500px; max-width: 100%; height: auto;" alt="Result 3" class="project-img">
+                        </div>
+                        <p>The RNN-LSTM model achieved 76.42% accuracy in speaker identification. Key results:</p>
+                        <ul class="content-list">
+                            <li>Demonstrated strong capability in capturing temporal voice patterns</li>
+                            <li>Slightly outperformed by CNN approach (82.18% accuracy) for this specific task</li>
+                            <li>Confusion matrix revealed challenges distinguishing speakers with similar vocal
+                                characteristics</li>
+                            <li>Performance metrics (F1 score) showed balanced precision and recall across classes</li>
+                        </ul>
+                        <p>The project highlighted the importance of model architecture selection based on data
+                            characteristics, with RNN-LSTM being particularly suited for temporal pattern analysis but
+                            slightly less effective than CNNs for this speaker identification task.</p>
                     </div>
-                    <img src="result_rnn3.png" alt="Result 3" class="project-img">
-
-                    <p>The RNN-LSTM model achieved 76.42% accuracy in speaker identification. Key results:</p>
-                    <ul class="content-list">
-                        <li>Demonstrated strong capability in capturing temporal voice patterns</li>
-                        <li>Slightly outperformed by CNN approach (82.18% accuracy) for this specific task</li>
-                        <li>Confusion matrix revealed challenges distinguishing speakers with similar vocal
-                            characteristics</li>
-                        <li>Performance metrics (F1 score) showed balanced precision and recall across classes</li>
-                    </ul>
-
-                    <p>The project highlighted the importance of model architecture selection based on data
-                        characteristics, with RNN-LSTM being particularly suited for temporal pattern analysis but
-                        slightly less effective than CNNs for this speaker identification task.</p>
 
                     <a href="https://github.com/ekata-03/Projects/blob/main/RNN_Speaker_identification.ipynb"
                         target="_blank" class="btn">View on GitHub</a>
@@ -1155,7 +1345,9 @@
             <div class="project-content">
                 <div class="project-section">
                     <h2 class="section-title">Project Overview</h2>
-                    <img src="parkinson.png" alt="Parkinson's Detection" class="project-img">
+                    <div style="text-align: center;">
+                        <img src="parkinson.png" style="width: 700px; max-width: 100%; height: auto;" alt="Parkinson's Detection" class="project-img">
+                    </div>
                     <p>This project focuses on the detection of Parkinson's disease using machine learning techniques
                         with voice-based biomarkers. Utilizing Python, we developed a Support Vector Machine (SVM) model
                         that analyzes vocal features to identify potential indicators of Parkinson's disease.</p>
@@ -1180,62 +1372,76 @@
 
                 <div class="project-section">
                     <h2 class="section-title">Methodology</h2>
-                    <img src="parkinson_meth.png" alt="Methodology Block Diagram" class="project-img">
+                    <div style="text-align: center;">
+                        <img src="parkinson_meth.png" style="width: 700px; max-width: 100%; height: auto;" alt="Methodology Block Diagram" class="project-img">
+                    </div>
+                    <div class="methodology-step">
+                        <h3>1. Data Collection</h3>
+                        <ul>
+                            <li>Utilized the Parkinson's Disease Detection Dataset from Kaggle</li>
+                            <li>Contains voice measurements from 31 people (23 with Parkinson's)</li>
+                            <li>195 voice recordings with 22 vocal characteristics each</li>
+                            <li>Features include fundamental frequency, jitter, shimmer, and harmonic-to-noise ratio</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="content-subtitle">1. Data Collection</h3>
-                    <ul class="content-list">
-                        <li>Utilized the Parkinson's Disease Detection Dataset from Kaggle</li>
-                        <li>Contains voice measurements from 31 people (23 with Parkinson's)</li>
-                        <li>195 voice recordings with 22 vocal characteristics each</li>
-                        <li>Features include fundamental frequency, jitter, shimmer, and harmonic-to-noise ratio</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>2. Data Preprocessing</h3>
+                        <div style="text-align: center;">
+                            <img src="parkinson_meth2.png" style="width: 700px; max-width: 100%; height: auto;" alt="Data Preprocessing" class="project-img">
+                        </div>
+                        <ul>
+                            <li>Standardized features using StandardScaler to ensure all features were on the same scale
+                            </li>
+                            <li>Handled missing values by imputing with feature means</li>
+                            <li>Performed feature selection to identify most predictive vocal characteristics</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="content-subtitle">2. Data Preprocessing</h3>
-                    <img src="parkinson_meth2.png" alt="Data Preprocessing" class="project-img">
+                    <div class="methodology-step">
+                        <h3>3. Model Architecture</h3>
+                        <div style="text-align: center;">
+                            <img src="svm.png" style="width: 500px; max-width: 100%; height: auto;" alt="SVM Model" class="project-img">
+                        </div>
+                        <ul>
+                            <li><strong>Algorithm:</strong> Support Vector Machine (SVM) with linear kernel</li>
+                            <li><strong>Hyperparameters:</strong> Regularization parameter C=1.0</li>
+                            <li><strong>Implementation:</strong> Scikit-learn's SVC class</li>
+                            <li><strong>Training:</strong> 80% of data used for training, 20% for testing</li>
+                        </ul>
+                    </div>
 
-                    <ul class="content-list">
-                        <li>Standardized features using StandardScaler to ensure all features were on the same scale
-                        </li>
-                        <li>Handled missing values by imputing with feature means</li>
-                        <li>Performed feature selection to identify most predictive vocal characteristics</li>
-                    </ul>
-
-                    <h3 class="content-subtitle">3. Model Architecture</h3>
-                    <img src="svm.png" alt="SVM Model" class="project-img">
-
-                    <ul class="content-list">
-                        <li><strong>Algorithm:</strong> Support Vector Machine (SVM) with linear kernel</li>
-                        <li><strong>Hyperparameters:</strong> Regularization parameter C=1.0</li>
-                        <li><strong>Implementation:</strong> Scikit-learn's SVC class</li>
-                        <li><strong>Training:</strong> 80% of data used for training, 20% for testing</li>
-                    </ul>
-
-                    <h3 class="content-subtitle">4. Training Process</h3>
-                    <ul class="content-list">
-                        <li>Split data into 80% training and 20% testing sets</li>
-                        <li>Trained SVM model with linear kernel</li>
-                        <li>Evaluated using accuracy score on both training and test sets</li>
-                        <li>Implemented cross-validation to ensure model robustness</li>
-                    </ul>
+                    <div class="methodology-step">
+                        <h3>4. Training Process</h3>
+                        <ul>
+                            <li>Split data into 80% training and 20% testing sets</li>
+                            <li>Trained SVM model with linear kernel</li>
+                            <li>Evaluated using accuracy score on both training and test sets</li>
+                            <li>Implemented cross-validation to ensure model robustness</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="project-section">
                     <h2 class="section-title">Results</h2>
-                    <img src="result_parkinson1.png" alt="Parkinson's Results" class="project-img">
-                    <img src="result_parkinson2.png" alt="Result 2" class="project-img">
-                    <p>The SVM model achieved 88.46% accuracy on training data and 87.18% on test data. Key findings:
-                    </p>
-                    <ul class="content-list">
-                        <li>Demonstrated high accuracy in distinguishing Parkinson's patients from healthy individuals
-                        </li>
-                        <li>Most predictive features included fundamental frequency, jitter, and shimmer measurements
-                        </li>
-                        <li>Model showed good generalization with minimal difference between training and test accuracy
-                        </li>
-                    </ul>
-
-                    <p>The results demonstrate a promising accuracy of approximately 88% in early detection, offering a
-                        non-invasive and efficient method for diagnosing Parkinson's disease through voice analysis.</p>
+                    <div class="results-step">
+                        <div class="project-images">
+                            <img src="result_parkinson1.png" alt="Parkinson's Results" class="project-img">
+                            <img src="result_parkinson2.png" alt="Result 2" class="project-img">
+                        </div>
+                        <p>The SVM model achieved 88.46% accuracy on training data and 87.18% on test data. Key findings:
+                        </p>
+                        <ul class="content-list">
+                            <li>Demonstrated high accuracy in distinguishing Parkinson's patients from healthy individuals
+                            </li>
+                            <li>Most predictive features included fundamental frequency, jitter, and shimmer measurements
+                            </li>
+                            <li>Model showed good generalization with minimal difference between training and test accuracy
+                            </li>
+                        </ul>
+                        <p>The results demonstrate a promising accuracy of approximately 88% in early detection, offering a
+                            non-invasive and efficient method for diagnosing Parkinson's disease through voice analysis.</p>
+                    </div>
 
                     <a href="https://github.com/ekata-03/Projects/blob/main/Parkinson's_Disease.ipynb" target="_blank"
                         class="btn">View on GitHub</a>
@@ -1246,24 +1452,58 @@
 
         <!-- Contact Section -->
         <section id="contact" class="content-section">
-            <h1 class="content-title">Contact Me</h1>
             <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <a href="mailto:adhikariekata11@gmail.com">adhikariekata11@gmail.com</a>
+                <div class="contact-header">
+                    <h2>Let's Connect!</h2>
+                    <p>Feel free to reach out for collaborations, opportunities, or just to say hello. I'm always open to discussing new projects and ideas.</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:adhikariekata11@gmail.com">adhikariekata11@gmail.com</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Tanahun, Nepal</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/ekataadhikari/" target="_blank">linkedin.com/in/ekataadhikari</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/ekata-03" target="_blank">github.com/ekata-03</a>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <h3>Location</h3>
-                        <p>Tanahun, Nepal</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>LinkedIn</h3>
-                        <a href="https://www.linkedin.com/in/ekataadhikari/" target="_blank">linkedin.com/in/ekataadhikari</a>
-                    </div>
-                    <div class="contact-item">
-                        <h3>GitHub</h3>
-                        <a href="https://github.com/ekata-03" target="_blank">github.com/ekata-03</a>
+
+                    <div class="contact-form-container">
+                        <div class="form-header">
+                            <h3>Send Me a Message</h3>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" placeholder="What's this about?">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" class="form-control" placeholder="I'd love to hear from you..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -1302,7 +1542,7 @@
             </div>
         </div>
         <div class="copyright">
-            Copyright &#169; 2025 Ekata Adhikari | All rights reserved
+            Copyright © 2025 Ekata Adhikari | All rights reserved
         </div>
     </footer>
 
@@ -1312,9 +1552,9 @@
         var typed = new Typed('#element', {
             strings: [
                 'Deep Learning^1000',
-                'Machine Learning^1000',
-                'Computer Vision^1000',
-                'Signal Processing^1000'
+                'Artificial Intelligence^1000',
+                'Signal Processing^1000',
+                'Computer Vision^1000'
             ],
             typeSpeed: 50,
             backSpeed: 30,
@@ -1324,6 +1564,10 @@
             backDelay: 800,
             startDelay: 500
         });
+
+        // Sections array for navigation
+        const sections = ['home', 'about', 'projects', 'contact'];
+        let currentSectionIndex = 0;
 
         // Show/hide sections
         function showSection(sectionId) {
@@ -1345,8 +1589,21 @@
                 });
             }
 
+            // Update current section index
+            currentSectionIndex = sections.indexOf(sectionId);
+
             // Scroll to top
             window.scrollTo(0, 0);
+        }
+
+        // Navigate between sections
+        function navigateSection(direction) {
+            if (direction === 'next') {
+                currentSectionIndex = (currentSectionIndex + 1) % sections.length;
+            } else if (direction === 'prev') {
+                currentSectionIndex = (currentSectionIndex - 1 + sections.length) % sections.length;
+            }
+            showSection(sections[currentSectionIndex]);
         }
 
         // Open project page
